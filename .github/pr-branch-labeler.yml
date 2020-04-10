@@ -1,0 +1,27 @@
+# # Head rules
+
+# Apply label "feature" if base matches "feature/*"
+feature:
+  head: "feature/*"
+
+# Apply label "enhancement" if base matches "enhancement/*"
+enhancement:
+  head: "enhancement/*"
+
+# Apply label "bug" if base matches "hotfix/*"
+bug:
+  head: ["hotfix/*", "bugfix/*"]
+
+# Apply label "tests" if base matches "tests/*"
+tests:
+  head: ["tests/*"]
+
+# # Base rules
+
+# Apply label "stage" if base matches "staging"
+stage:
+  base: "staging"
+
+# Apply label "release" if base matches "master"
+release:
+  base: "master"

@@ -1,0 +1,25 @@
+name: Label and Assign PR to assignee and reviewers.
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  automation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Assign PR to creator
+      uses: thomaseizinger/assign-pr-creator-action@v1.0.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Label PR based on branch
+      uses: ffittschen/pr-branch-labeler@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Assign Review Request to Tokyo
+      uses: kunihiko-t/review-request-action@v0.1.3
+      if: github.event.pull_request.user.login != 'a-tokyo'
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        reviewers: "a-tokyo"

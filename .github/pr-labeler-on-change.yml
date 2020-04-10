@@ -1,0 +1,15 @@
+onComment:
+  set:
+    - wip
+
+onApproved:
+  remove:
+    - help wanted
+  set:
+    - ready
+
+onChangesRequested:
+  remove:
+    - invalid
+    - duplicate
+    - help wanted
