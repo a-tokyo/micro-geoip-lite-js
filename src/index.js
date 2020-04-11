@@ -1,5 +1,5 @@
 /* @flow */
-import ky from 'ky-universal';
+const ky = require('ky-universal');
 
 /**
  * Geoip online service url - eg: https://github.com/A-Tokyo/micro-geoip-lite
@@ -31,7 +31,7 @@ const geodecodeIp = (
   ky(`${serviceUrl || SERVICE_URL_GEOIP}${ip ? `?ip=${ip}` : ''}`)
     .then((res) => res.json())
     .catch((error) => ({
-      error: error?.message,
+      error: error && error.message,
     }));
 
-export default geodecodeIp;
+module.exports = geodecodeIp;

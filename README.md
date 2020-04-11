@@ -10,7 +10,7 @@
 # Usage
 - params:
   - ip?: string - optional, defaults to client's IP
-  - options?: `{ serviceUrl: string }` - optional, called instead of the default provider URL.
+  - options?: `{ serviceUrl: string }` - optional, called instead of the default provider URL. You can also provide this via an env var `REACT_APP_SERVICE_URL_GEOIP` or `SERVICE_URL_GEOIP`
 
 - returns:
   ```js
