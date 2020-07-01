@@ -5,7 +5,7 @@
 [![npm version](https://badge.fury.io/js/micro-geoip-lite.svg)](https://badge.fury.io/js/micro-geoip-lite)
 
 # Installation
-- Run `yarn add micro-geoip-light`, `npm i micro-geoip-light`
+- Run `yarn add micro-geoip-lite`, `npm i micro-geoip-lite`
 
 # Usage
 - params:
@@ -31,7 +31,7 @@
 
 - example - fetch own ip info:
   ```js
-  import geodecodeIp from 'micro-geoip-light';
+  import geodecodeIp from 'micro-geoip-lite';
   
   const result = await geodecodeIp();
 
@@ -52,7 +52,7 @@
 
 - example - fetch specific ip info:
   ```js
-  import geodecodeIp from 'micro-geoip-light';
+  import geodecodeIp from 'micro-geoip-lite';
   
   const result = await geodecodeIp('207.97.227.239');
   ```
