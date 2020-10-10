@@ -2,7 +2,14 @@
 
 🌍 An extremely lite geoip decoder utilizing the [micro-geoip-lite microservice](https://github.com/A-Tokyo/micro-geoip-lite) to geo decode the IP info via an https request - the microservice utilizes MaxMind's IP info dataset.
 
-[![npm version](https://badge.fury.io/js/micro-geoip-lite.svg)](https://badge.fury.io/js/micro-geoip-lite)
+<a href="https://npmjs.com/package/micro-geoip-lite">
+  <img src="https://img.shields.io/npm/v/micro-geoip-lite.svg"></img>
+  <img src="https://img.shields.io/npm/dt/micro-geoip-lite.svg"></img>
+</a>
+<a href="https://codecov.io/gh/A-Tokyo/micro-geoip-lite">
+  <img src="https://img.shields.io/codecov/c/github/a-tokyo/micro-geoip-lite.svg"></img>
+</a>
+<a href="https://twitter.com/intent/follow?screen_name=ahmad_tokyo"><img src="https://img.shields.io/twitter/follow/ahmad_tokyo.svg?label=Follow%20@ahmad_tokyo" alt="Follow @ahmad_tokyo"></img></a>
 
 # Installation
 - Run `yarn add micro-geoip-lite`, `npm i micro-geoip-lite`
