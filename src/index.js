@@ -29,8 +29,8 @@ const geodecodeIp = (
   error?: string,
 }> =>
   ky(
-    `${serviceUrl || SERVICE_URL_GEOIP}${
-      ip ? `?ip=${ip}${timeout ? `&timeout=${timeout}` : ''}` : ''
+    `${serviceUrl || SERVICE_URL_GEOIP}${ip ? `?ip=${ip}` : ''}${
+      timeout ? `${ip ? '&' : '?'}timeout=${timeout}` : ''
     }`,
   )
     .then((res) => res.json())

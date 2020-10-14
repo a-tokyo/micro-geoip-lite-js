@@ -66,6 +66,25 @@ describe('index Test', () => {
   });
 
   it('Returns proper schema with timeout', async () => {
+    const result = await geodecodeIp('207.97.227.239', { timeout: 1000 * 3 });
+    expect(result).toEqual(
+      expect.objectContaining({
+        ip: '207.97.227.239',
+        range: [3479298048, 3479302143],
+        country: 'US',
+        region: 'TX',
+        eu: '0',
+        timezone: 'America/Chicago',
+        city: 'San Antonio',
+        ll: [29.4963, -98.4004],
+        metro: 641,
+        area: 1000,
+      }),
+    );
+    expect(result.error).toEqual(undefined);
+  });
+
+  it('Returns proper schema with timeout AND NO IP', async () => {
     const result = await geodecodeIp(undefined, { timeout: 1000 * 3 });
     expect(result).toEqual(
       expect.objectContaining({
