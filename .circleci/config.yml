@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Run code-report
           command: |
-            if [[ "$CIRCLE_BRANCH" == "master" || "$CIRCLE_BRANCH" == "develop" ]]; then
+            if [[ "$CIRCLE_BRANCH" == "main" || "$CIRCLE_BRANCH" == "develop" ]]; then
               yarn code-report
             fi
 

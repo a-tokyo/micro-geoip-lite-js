@@ -22,6 +22,6 @@ tests:
 stage:
   base: "staging"
 
-# Apply label "release" if base matches "master"
+# Apply label "release" if base matches "main"
 release:
-  base: "master"
+  base: "main"
