@@ -46,6 +46,11 @@ jobs:
           command: NODE_ENV=production yarn build
 
       - run:
+          name: Upload coverage
+          command: |
+            bash <(curl -s https://codecov.io/bash)
+
+      - run:
           name: Run code-report
           command: |
             if [[ "$CIRCLE_BRANCH" == "main" || "$CIRCLE_BRANCH" == "develop" ]]; then
