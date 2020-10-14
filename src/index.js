@@ -14,7 +14,7 @@ const SERVICE_URL_GEOIP =
  */
 const geodecodeIp = (
   ip?: ?string,
-  { serviceUrl }: { serviceUrl?: string } = {},
+  { serviceUrl, timeout }: { serviceUrl?: string, timeout?: number } = {},
 ): Promise<{
   ip: ?string,
   range?: [number, number],
@@ -28,7 +28,11 @@ const geodecodeIp = (
   area?: number,
   error?: string,
 }> =>
-  ky(`${serviceUrl || SERVICE_URL_GEOIP}${ip ? `?ip=${ip}` : ''}`)
+  ky(
+    `${serviceUrl || SERVICE_URL_GEOIP}${
+      ip ? `?ip=${ip}${timeout ? `&timeout=${timeout}` : ''}` : ''
+    }`,
+  )
     .then((res) => res.json())
     .catch((error) => ({
       error: error && error.message,

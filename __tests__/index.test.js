@@ -65,7 +65,26 @@ describe('index Test', () => {
     expect(result.error).toEqual(undefined);
   });
 
-  it('Returns proper error if any', async () => {
+  it('Returns proper schema with timeout', async () => {
+    const result = await geodecodeIp(undefined, { timeout: 1000 * 3 });
+    expect(result).toEqual(
+      expect.objectContaining({
+        ip: expect.any(String),
+        range: [expect.any(Number), expect.any(Number)],
+        country: expect.any(String),
+        region: expect.any(String),
+        eu: expect.any(String),
+        timezone: expect.any(String),
+        city: expect.any(String),
+        ll: [expect.any(Number), expect.any(Number)],
+        metro: expect.any(Number),
+        area: expect.any(Number),
+      }),
+    );
+    expect(result.error).toEqual(undefined);
+  });
+
+  it('Returns proper error if serviceUrl invalid', async () => {
     const result = await geodecodeIp('207.97.227.239', { serviceUrl: 'xxx' });
     expect(result.error).toEqual(expect.any(String));
   });
