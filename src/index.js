@@ -7,7 +7,7 @@ const ky = require('ky-universal');
 const SERVICE_URL_GEOIP =
   process.env.REACT_APP_SERVICE_URL_GEOIP ||
   process.env.SERVICE_URL_GEOIP ||
-  'https://geoip-lite.now.sh/';
+  'https://geoip-lite.vercel.app/';
 
 /**
  * Gets the client's information via the IP address
