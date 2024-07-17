@@ -69,4 +69,4 @@
   const result = await geodecodeIp('207.97.227.239');
   ```
 
-- [Live DEMO](https://geoip-lite.now.sh/?ip=207.97.227.239)
+- [Live DEMO](https://geoip-lite.vercel.app/?ip=207.97.227.239)
