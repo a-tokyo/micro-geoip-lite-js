@@ -6,6 +6,7 @@ const ky = require('ky-universal');
  */
 const SERVICE_URL_GEOIP =
   process.env.REACT_APP_SERVICE_URL_GEOIP ||
+  process.env.NEXT_PUBLIC_SERVICE_URL_GEOIP ||
   process.env.SERVICE_URL_GEOIP ||
   'https://geoip-lite.vercel.app/';
 
