@@ -1,6 +1,6 @@
 {
   "name": "micro-geoip-lite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🌍 An extremely lite geoip decoder utilizing the micro-geoip-lite microservice to geo decode the IP info via an https request - the microservice utilizes MaxMind's IP info dataset.",
   "author": {
     "name": "Ahmed Tarek",
