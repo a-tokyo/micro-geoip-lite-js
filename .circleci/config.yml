@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: cimg/node:20.11
+      - image: cimg/node:22.22.3
 
     working_directory: ~/repo
 
