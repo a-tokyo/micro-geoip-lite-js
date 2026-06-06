@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/A-Tokyo/micro-geoip-lite-js.git"
+    "url": "git+https://github.com/a-tokyo/micro-geoip-lite-js.git"
   },
   "main": "lib/index.js",
   "files": [
     "lib/"
   ],
-  "homepage": "https://github.com/A-Tokyo/micro-geoip-lite-js#readme",
+  "homepage": "https://github.com/a-tokyo/micro-geoip-lite-js#readme",
   "bugs": {
-    "url": "https://github.com/A-Tokyo/micro-geoip-lite-js/issues"
+    "url": "https://github.com/a-tokyo/micro-geoip-lite-js/issues"
   },
   "scripts": {
     "start": "babel-node src/index.js",
