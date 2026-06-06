@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/node:12.10.0
+      - image: cimg/node:22.22.3
 
     working_directory: ~/repo
 
@@ -50,13 +50,6 @@ jobs:
           command: |
             bash <(curl -s https://codecov.io/bash)
 
-      - run:
-          name: Run code-report
-          command: |
-            if [[ "$CIRCLE_BRANCH" == "main" || "$CIRCLE_BRANCH" == "develop" ]]; then
-              yarn code-report
-            fi
-
       # Copy lib to artifacts
       - store_artifacts:
           path: ~/repo/lib
@@ -66,8 +59,3 @@ jobs:
       - store_artifacts:
           path: ~/repo/coverage
           destination: /coverage
-
-      # Copy code report to artifacts
-      - store_artifacts:
-          path: ~/repo/code-report
-          destination: /code-report

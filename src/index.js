@@ -29,12 +29,17 @@ const geodecodeIp = (
   area?: number,
   error?: string,
 }> =>
-  ky(
-    `${serviceUrl || SERVICE_URL_GEOIP}${ip ? `?ip=${ip}` : ''}${
-      timeout ? `${ip ? '&' : '?'}timeout=${timeout}` : ''
-    }`,
-  )
-    .then((res) => res.json())
+  // Wrap in Promise.resolve so that synchronous throws (eg: an invalid
+  // serviceUrl rejected by the native Request/URL constructor on Node >=18)
+  // are normalized into the promise chain and handled by .catch below.
+  Promise.resolve()
+    .then(() =>
+      ky(
+        `${serviceUrl || SERVICE_URL_GEOIP}${ip ? `?ip=${ip}` : ''}${
+          timeout ? `${ip ? '&' : '?'}timeout=${timeout}` : ''
+        }`,
+      ).then((res) => res.json()),
+    )
     .catch((error) => ({
       error: error && error.message,
     }));

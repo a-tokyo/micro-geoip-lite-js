@@ -1,11 +1,10 @@
 {
   "extends": [
-    "airbnb/base",
-    "plugin:flowtype/recommended",
-    "prettier",
-    "prettier/flowtype"
+    "airbnb-base",
+    "plugin:ft-flow/recommended",
+    "plugin:prettier/recommended"
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
     "es6": true,
@@ -13,7 +12,6 @@
     "jest": true
   },
   "plugins": [
-    "flowtype",
-    "prettier"
+    "ft-flow"
   ]
 }

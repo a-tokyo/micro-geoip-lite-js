@@ -46,7 +46,7 @@ describe('index Test', () => {
 
   it('Calls provided service url and returns proper schema.', async () => {
     const result = await geodecodeIp('207.97.227.239', {
-      serviceUrl: 'https://micro-geoip-lite.now.sh',
+      serviceUrl: 'https://micro-geoip-lite.vercel.app',
     });
     expect(result).toEqual(
       expect.objectContaining({
